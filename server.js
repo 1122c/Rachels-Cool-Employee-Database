@@ -135,10 +135,43 @@ function addRole() {
   })
 };
 
+function addEmployee() {
+  connection.query("SELECT * FROM role", function (err, res) {
+    if (err) throw err;
+    inquirer.prompt([
+      {
+        name: "first_name",
+        type: "input",
+        message: "What is the new employee's first name?"
+      },
+      {
+        name: "last_name",
+        type: "input",
+        message: "What is the new employee's last name?"
+      },
+      {
+        name: "roleId",
+        type: "list",
+        choices: [1,2,3,4],
+        message: "Select a role id for the new employee"
+      }
+    ]).then(function (response) {
+     
+      connection.query("INSERT INTO employee SET ?",
+        {
+          first_name: response.first_name,
+          last_name: response.last_name,
+          role_id: response.roleId,
+          manager_id: 1
+        }, function (err, res) {
+          if (err) throw err;
+          console.log("New employee added to database")
+          init();
+        })
+    })
+  })
+};
 
-function addEmployee(){
-
-}
 
 
 
