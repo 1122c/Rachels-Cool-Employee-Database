@@ -173,7 +173,10 @@ function addEmployee() {
 };
 
 
-
+function updateEmployee(){
+    console.log("coming soon")
+    init()
+}
 
 
 
