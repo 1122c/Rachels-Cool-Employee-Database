@@ -50,6 +50,24 @@ function init() {
     });
 }
 
+// Add function needs insert command
+function addDepartment(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "new_department",
+            message: "Please enter the name of the new department."
+        }
+    ]).then(response =>{
+        connection.query("INSERT INTO department SET ?", {
+            
+                name: response.new_department
+            
+        })
+        init()
+    })
+}
+
 // view functions cite mysql connection to enable queries
 function viewDepartments(){
     connection.query("SELECT * FROM department", (err, res)=>{
