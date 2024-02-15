@@ -1,0 +1,16 @@
+{
+  "name": "rachels-cool-employee-database",
+  "version": "1.0.0",
+  "description": "Employee Database in house",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rachel Valenzuela",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.14",
+    "mysql2": "^3.9.1"
+  }
+}
