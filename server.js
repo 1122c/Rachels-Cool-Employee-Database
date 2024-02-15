@@ -96,6 +96,52 @@ function viewEmployees() {
 
 
 
+function addRole() {
+  connection.query("SELECT * FROM department", function (err, res) {
+    if (err) throw err;
+    //asking for title, salary and department id 
+    inquirer.prompt([
+      {
+        name: "title",
+        type: "input",
+        message: "What is the title of the new role?"
+      },
+      {
+        name: "salary",
+        type: "input",
+        message: "What is the salary for the new role?",
+      },
+      {
+        name: "departmentId",
+        type: "list",
+        message: "Select a department Id for this role",
+        choices: [1,2,3,4]
+      }
+    ]).then(function (response) {
+      
+      connection.query("INSERT INTO role SET ?",
+        {
+          title: response.title,
+          salary: response.salary,
+          department_id: response.departmentId
+        },
+        function (err, res) {
+          if (err) throw err;
+          console.log("New role created.");
+          init();
+        }
+      );
+    });
+  })
+};
+
+
+function addEmployee(){
+
+}
+
+
+
 
 
 
