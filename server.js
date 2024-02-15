@@ -43,13 +43,20 @@ function init() {
         case "Update employee roles":
           updateEmployee();
           break;
-        case "exit":
+        case "Exit":
           connection.end();
           break;
       }
     });
 }
 
+function viewDepartments(){
+    connection.query("SELECT * FROM department", (err, res)=>{
+        if (err) throw err 
+        console.table(res)
+        init()
+    })
+}
 
 
 
