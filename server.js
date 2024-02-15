@@ -50,12 +50,29 @@ function init() {
     });
 }
 
+// view functions cite mysql connection to enable queries
 function viewDepartments(){
     connection.query("SELECT * FROM department", (err, res)=>{
         if (err) throw err 
         console.table(res)
         init()
     })
+}
+
+function viewRoles() {
+  connection.query("SELECT * FROM role", (err, res) => {
+    if (err) throw err;
+    console.table(res);
+    init();
+  });
+}
+
+function viewEmployees() {
+  connection.query("SELECT * FROM employee", (err, res) => {
+    if (err) throw err;
+    console.table(res);
+    init();
+  });
 }
 
 
