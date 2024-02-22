@@ -4,7 +4,7 @@
 
 ## Description
 
-This project is a simple employee database management system created using mySQL and Sequalize with tables containg employee title, salary, department, role, and manager role if any.
+This project is a simple employee database management system created using mySQL and Sequelize with tables containg employee title, salary, department, role, and manager role if any.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ This project is a simple employee database management system created using mySQL
 
 ## Installation
 
-Requires Insomnia for API endpoints, running node.js, mySQL, and Sequalize
+Requires Insomnia for API endpoints, running node.js, mySQL, and Sequelize
 
 ## Usage
 
