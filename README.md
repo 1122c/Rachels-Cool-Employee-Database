@@ -1,6 +1,4 @@
-# Rachels-Cool-Employee-Database
-
-# Rachels-Cool-Employee-Database
+#employee database cool
 
 ## Description
 
